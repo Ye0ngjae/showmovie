@@ -1,4 +1,5 @@
 from flask import *
+import movie
 
 app = Flask(__name__)
 
@@ -14,5 +15,6 @@ def login():
         userid = request.form.get("userid")
         password = request.form.get("password")
         return userid + password
-    
-        return "<script>alert('Wrong id/pw');history.back(-1);</script>";
+
+        
+        return "<script>alert('Wrong id/pw');history.back(-1);</script>"
