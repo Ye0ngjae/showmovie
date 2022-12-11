@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/request.css">
+    <link rel="stylesheet" href="../static/css/list.css">
     <link rel="stylesheet" href="../static/css/header.css">
     <title>Show Movie</title>
 </head>
@@ -17,18 +17,22 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/list">Movie List</a></li>
-                    <li><a href="#">Request</a></li>
+                    <li><a href="/request">Request</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <div class="box">
-        <form method = 'post'>
-            <h1>Request Movie</h1>
-            <input class="inputbox" type = 'text' name = 'url' placeholder = 'Enter URL'>
-            <button class="send_button" type = 'submit'>Submit</button>
-        </form>
-    </div>
+    <ul>
+        {% if movie == None %}
+            {% for i in range(10) %}
+            <li>
+                <img src="../static/img/movie/{{i}}.jpg" alt="영화 포스터">
+                <p class="title">{{ title }}</p>
+            </li>
+            {% endfor %}
+        {% else %}
+            <h1 class="name">영화가 없습니다.</h1>
+        {% endif %}
 </body>
 <!-- made by @Ye0ngjae -->
 </html>

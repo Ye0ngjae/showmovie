@@ -21,7 +21,7 @@ def save_img(num):
     
     img = soup.find('img')
     img_src = img['src']
-    urllib.request.urlretrieve(img_src, 'static/img/'+str(num)+'.jpg')
+    urllib.request.urlretrieve(img_src, 'static/img/movie/'+str(num)+'.jpg')
 
 def get_title(num):
     movie_url = url+'movie/bi/mi/photoViewPopup.naver?movieCode='+num
@@ -43,7 +43,7 @@ def get_movie_info(num):
     info = soup.find('div', class_='story_area')
     info = soup.find('p', class_='con_tx')
 
-    return str(info).replace('<br/>', '\n').replace('<p class="con_tx">', '').replace('</p>', '')
+    return str(info).replace('<br/>', '\n').replace('<p class="con_tx">', '').replace('</p>', '').replace('\xa0','').replace('\n', '')
    
 def get_movie_stat(num):
     movie_url  = url+'movie/bi/mi/basic.naver?code='+num
@@ -55,4 +55,9 @@ def get_movie_stat(num):
     info = soup.find('dl', class_='info_spec')
     info = info.findAll('span')
     
-    return str(info[3].text).replace('\n', '').replace(' ', '')
+    return str(info[3].text).replace('\n', '').replace(' ', '').replace('\t', '').replace('\r', '')
+
+#num = get_num(input('url: '))
+#print(get_title(num))
+#print(get_movie_stat(num))
+#print(get_movie_info(num))

@@ -36,3 +36,7 @@ header nav ul li a:after {opacity:0;content:"";position:absolute;width:100%;heig
 header nav ul li.active a:after,
 header nav ul li:hover a:after {opacity:1;}
 li {list-style:none;}
+
+body{
+    background-color: #e4e3d6;
+}

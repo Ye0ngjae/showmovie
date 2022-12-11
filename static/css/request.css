@@ -1,11 +1,60 @@
-
-
 .box {
-    width: 100%;
+    width: 60vh;
     height: 50vh;
+    margin-top: 10%;
+    margin-left: 35%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    border-radius: 10%;
+    background-color: white;
 }
 
+.box h1 {
+    text-align: center;
+    margin-top: -30%;
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+}
+
+.inputbox{
+    margin-top: 30%;
+    margin-left: 10%;
+    width: 80%;
+    height: 10%;
+    font-size: 15px;
+    text-align: center; 
+}
+
+.wrap {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -86px;
+	margin-left: -89px;
+	text-align: center;
+}
+
+.send_button {
+	-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	display: block;
+	margin: 20px auto;
+	max-width: 180px;
+	text-decoration: none;
+	border-radius: 4px; 
+	padding: 10px 30px;
+}
+
+.send_button {
+	color: gray;
+}
+
+.send_button:hover {
+	color: rgba(255, 255, 255, 0.85);
+	box-shadow: skyblue 0 0px 0px 40px inset;
+}

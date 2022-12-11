@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/request.css">
+    <link rel="stylesheet" href="../static/css/moive.css">
     <link rel="stylesheet" href="../static/css/header.css">
     <title>Show Movie</title>
 </head>
@@ -17,18 +17,16 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/list">Movie List</a></li>
-                    <li><a href="#">Request</a></li>
+                    <li><a href="/request">Request</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <div class="box">
-        <form method = 'post'>
-            <h1>Request Movie</h1>
-            <input class="inputbox" type = 'text' name = 'url' placeholder = 'Enter URL'>
-            <button class="send_button" type = 'submit'>Submit</button>
-        </form>
-    </div>
+    <img src="../static/img/movie/{{ num }}.jpg">
+    <div class="container">
+        <div class="movie">
+            <h1>{{ title }}</h1>
+        </div>
 </body>
 <!-- made by @Ye0ngjae -->
 </html>
