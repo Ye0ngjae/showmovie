@@ -23,7 +23,7 @@
         </div>
     </header>
     <ul>
-        {% if movie == None %}
+        {% if movie != None %}
             {% for i in range(10) %}
             <li>
                 <img src="../static/img/movie/{{i}}.jpg" alt="영화 포스터">
