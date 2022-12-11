@@ -22,6 +22,7 @@ def admin():
         print(title)
         print(stat)
         print(info)
+        return render_template('request.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
