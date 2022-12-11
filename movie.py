@@ -30,7 +30,7 @@ def get_title(num):
     
     name = soup.find('img')
     title = name['alt']
-    print(title)
+
     return title
     
 def get_movie_info(num):
@@ -42,8 +42,7 @@ def get_movie_info(num):
 
     info = soup.find('div', class_='story_area')
     info = soup.find('p', class_='con_tx')
-    
-    print(str(info).replace('<br/>', '\n').replace('<p class="con_tx">', '').replace('</p>', ''))
+
     return str(info).replace('<br/>', '\n').replace('<p class="con_tx">', '').replace('</p>', '')
    
 def get_movie_stat(num):
@@ -56,6 +55,4 @@ def get_movie_stat(num):
     info = soup.find('dl', class_='info_spec')
     info = info.findAll('span')
     
-    print(str(info[3].text).replace('\n', '').replace(' ', ''))
-
     return str(info[3].text).replace('\n', '').replace(' ', '')

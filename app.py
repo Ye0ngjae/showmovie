@@ -13,7 +13,15 @@ def admin():
     if request.method == 'GET':
         return render_template('request.html')
     else:
-        print('POST')
-        
+        url = request.form['url']
+        print(url)
+        num = movie.get_num(url)
+        title = movie.get_title(num)
+        info = movie.get_movie_info(num)
+        stat = movie.get_movie_stat(num)
+        print(title)
+        print(stat)
+        print(info)
+
 if __name__ == '__main__':
     app.run(debug=True)
