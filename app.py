@@ -1,11 +1,19 @@
 from flask import *
 import os
-import movie
+from movie import *
 
 app = Flask(__name__)
 
+movie = {
+    'num': '',
+    'title': '',
+    'stat': '',
+    'info': ''
+}
+
 @app.route('/')
 def index():
+    
     return render_template('index.html')
 
 @app.route('/request', methods=['GET', 'POST'])
@@ -15,13 +23,12 @@ def admin():
     else:
         url = request.form['url']
         print(url)
-        num = movie.get_num(url)
-        title = movie.get_title(num)
-        info = movie.get_movie_info(num)
-        stat = movie.get_movie_stat(num)
-        print(title)
-        print(stat)
-        print(info)
+        num = get_num(url)
+        print(get_title(num))
+        print(get_movie_stat(num))
+        print(get_movie_info(num))
+        
+        
         return render_template('request.html')
 
 if __name__ == '__main__':

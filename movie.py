@@ -11,11 +11,11 @@ def get_num(link):
     num = link.split('=')[1]
     save_img(num)
     
-    return num
+    return str(num)
 
 def save_img(num):
-    img_url = url+'movie/bi/mi/photoViewPopup.naver?movieCode='+str(num)
-    print(img_url)
+    img_url = url+'movie/bi/mi/photoViewPopup.naver?movieCode='+num
+
     res = requests.get(img_url)
     soup = BeautifulSoup(res.text, 'html.parser')
     
@@ -24,7 +24,7 @@ def save_img(num):
     urllib.request.urlretrieve(img_src, 'static/img/'+str(num)+'.jpg')
 
 def get_title(num):
-    movie_url = url+'movie/bi/mi/photoViewPopup.naver?movieCode='+str(num)
+    movie_url = url+'movie/bi/mi/photoViewPopup.naver?movieCode='+num
     res = requests.get(movie_url)
     soup = BeautifulSoup(res.text, 'html.parser')
     
@@ -34,7 +34,7 @@ def get_title(num):
     return title
     
 def get_movie_info(num):
-    movie_url = url+'movie/bi/mi/basic.naver?code='+str(num)
+    movie_url = url+'movie/bi/mi/basic.naver?code='+num
     res = requests.get(movie_url)
     
     soup = BeautifulSoup(res.content, 'html.parser')
@@ -46,7 +46,7 @@ def get_movie_info(num):
     return str(info).replace('<br/>', '\n').replace('<p class="con_tx">', '').replace('</p>', '')
    
 def get_movie_stat(num):
-    movie_url  = url+'movie/bi/mi/basic.naver?code='+str(num)
+    movie_url  = url+'movie/bi/mi/basic.naver?code='+num
     res = requests.get(movie_url)
     
     soup = BeautifulSoup(res.content, 'html.parser')
