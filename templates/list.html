@@ -23,11 +23,12 @@
         </div>
     </header>
     <ul>
-        {% if movie == None %}
-            {% for i in range(10) %}
+        {% if status == 1 %}
+            {% for value in range(10) %}
             <li>
-                <img src="../static/img/movie/{{i}}.jpg" alt="영화 포스터">
+                <a href="/movie/{{ i }}"><img src="../static/img/movie/{{ i }}.jpg" alt="영화 포스터"></a>
                 <p class="title">{{ title }}</p>
+                <p class="date">{{ date }}</p>
             </li>
             {% endfor %}
         {% else %}

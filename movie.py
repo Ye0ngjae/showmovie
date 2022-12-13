@@ -33,7 +33,7 @@ def get_title(num):
 
     return title
     
-def get_movie_info(num):
+def get_info(num):
     movie_url = url+'movie/bi/mi/basic.naver?code='+num
     res = requests.get(movie_url)
     
@@ -43,9 +43,9 @@ def get_movie_info(num):
     info = soup.find('div', class_='story_area')
     info = soup.find('p', class_='con_tx')
 
-    return str(info).replace('<br/>', '\n').replace('<p class="con_tx">', '').replace('</p>', '').replace('\xa0','').replace('\n', '')
+    return str(info).replace('<br/>', '\n').replace('<p class="con_tx">', '').replace('</p>', '').replace('\xa0','').replace('\n', '').replace('&lt;','').replace('&gt;','')
    
-def get_movie_stat(num):
+def get_date(num):
     movie_url  = url+'movie/bi/mi/basic.naver?code='+num
     res = requests.get(movie_url)
     
