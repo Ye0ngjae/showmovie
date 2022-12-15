@@ -10,7 +10,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 200px;
+    width: 180px;
     height: 250px;
 }
 
@@ -28,17 +28,45 @@
     display: block;
     margin-top: 30px;
     margin-bottom: 30px;
-    margin-left: 5%;
-    margin-right: 5%;
-    
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
-td {
-    padding: 10px;
-    text-align: center;
+.title {
+    margin-top: 5px;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.date {
+    display: block;
+    margin-top: -35px;
     font-size: 5px;
+    color: gray;
+}
+
+.item {
+    display: block;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: gray;    
+}
+
+.posted-info {
+    display: block;
+    margin-left: 5px;
+    margin-right: 20px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    font-size: 15px; 
 }
 
 a {
-
+    text-decoration-line: none;
 }
+

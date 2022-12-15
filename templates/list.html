@@ -23,19 +23,23 @@
         </div>
     </header>
     {% if status == 1 %}
-        <div class="box1">
+        <ul class="box1">
             {% for row in rows %}
-            <a class="movie" href="/movie/{{ row[1] }}"><tr>
+            <li class="item">
+            <a class="movie" href="/movie/{{ row[1] }}">
                 <img class="movieimg" src="../static/img/movie/{{ row[1] }}.jpg" alt="영화 포스터">
-                <td>{{ row[2] }}</td>
+            </a>
+            <div class="posted-info">
+                <p class="title">{{ row[2] }}</p>
                 </br>
-                <td>{{ row[3] }}</td>
-            </tr></a>
+                <p class="date">{{ row[3] }}</p>
+            </div>
+            </li>
             {% endfor %}
         {% else %}
             <h1 class="name">영화가 없습니다.</h1>
-    </div>
+        </ul>
     {% endif %}
 </body>
-<!-- made by @Ye0ngjae -->
+<!-- @Ye0ngjae -->
 </html>

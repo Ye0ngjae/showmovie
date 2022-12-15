@@ -25,13 +25,13 @@
     <div class="movie">
         {% for row in rows %}
             <img class="movieimg"src="../static/img/movie/{{ row[1] }}.jpg">
-            <div class="movie">
-                <h1>{{ row[2] }}</h1>
-                <p>{{ row[3] }}</p>
-                <p>{{ row[4] }}</p>
+            <div class="movieinfo">
+                <h1 class="title">{{ row[2] }}</h1>
+                <p class="date">{{ row[3] }}</p>
+                <p class"info">{{ row[4] }}</p>
             </div>
         {% endfor %}
     </div>
 </body>
-<!-- made by @Ye0ngjae -->
+<!-- @Ye0ngjae -->
 </html>
