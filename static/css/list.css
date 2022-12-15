@@ -14,8 +14,31 @@
     height: 250px;
 }
 
-.box {
+.box1 {
+    margin-top: 10%;
+    margin-left:10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.movie {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    font-size: 5px;
+}
+
+a {
+
 }

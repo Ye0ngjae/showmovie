@@ -21,21 +21,17 @@ def index():
 
 @app.route('/list')
 def list():
-    if(c.execute("SELECT * FROM movie").fetchall() == None):
+    if(c.execute("SELECT * FROM movie").fetchall() == []):
         status = 0
     else:
         status = 1
-        
-        
-    print(status)
     
     row = c.execute("SELECT * FROM movie").fetchall()
-    print(row)
     
     return render_template('list.html',status=status, rows=row)
 
 @app.route('/request', methods=['GET', 'POST'])
-def admin():
+def request_page():
     if request.method == 'GET':
         return render_template('request.html')
     else:
@@ -61,10 +57,9 @@ def admin():
 @app.route('/movie/<int:num>')
 def movie(num):
     try:
-        row = c.execute("SELECT * FROM movie WHERE num = ?", (num)).fetchone()
-        print(row)
+        row = c.execute("SELECT * FROM movie WHERE num = ?", (num,)).fetchall()
     
-        return render_template('movie.html', title='')
+        return render_template('movie.html', rows=row)
     except:
         return "<script>alert('오류가 발생했습니다.');history.back()</script>"
 

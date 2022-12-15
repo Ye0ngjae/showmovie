@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/moive.css">
+    <link rel="stylesheet" href="../static/css/movie.css">
     <link rel="stylesheet" href="../static/css/header.css">
     <title>Show Movie</title>
 </head>
@@ -22,14 +22,16 @@
             </nav>
         </div>
     </header>
-    {{ num = }}
-    <img src="../static/img/movie/{{ num }}.jpg">
-    <div class="container">
-        <div class="movie">
-            <h1>{{ title }}</h1>
-            <p>{{ stat }}</p>
-            <p>{{ info }}</p>
-        </div>
+    <div class="movie">
+        {% for row in rows %}
+            <img class="movieimg"src="../static/img/movie/{{ row[1] }}.jpg">
+            <div class="movie">
+                <h1>{{ row[2] }}</h1>
+                <p>{{ row[3] }}</p>
+                <p>{{ row[4] }}</p>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 <!-- made by @Ye0ngjae -->
 </html>

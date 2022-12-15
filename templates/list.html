@@ -22,11 +22,10 @@
             </nav>
         </div>
     </header>
-    <div class="box1">
-        {% if status == 1 %}
+    {% if status == 1 %}
+        <div class="box1">
             {% for row in rows %}
-            
-            <a href="/movie/{{ row[1] }}"><tr>
+            <a class="movie" href="/movie/{{ row[1] }}"><tr>
                 <img class="movieimg" src="../static/img/movie/{{ row[1] }}.jpg" alt="영화 포스터">
                 <td>{{ row[2] }}</td>
                 </br>
@@ -35,8 +34,8 @@
             {% endfor %}
         {% else %}
             <h1 class="name">영화가 없습니다.</h1>
-        {% endif %}
     </div>
+    {% endif %}
 </body>
 <!-- made by @Ye0ngjae -->
 </html>
