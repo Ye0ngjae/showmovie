@@ -43,7 +43,7 @@ def get_info(num):
     info = soup.find('div', class_='story_area')
     info = soup.find('p', class_='con_tx')
 
-    return str(info).replace('<br/>', '\n').replace('<p class="con_tx">', '').replace('</p>', '').replace('\xa0','').replace('\n', '').replace('&lt;','').replace('&gt;','')
+    return str(info).replace('<br/>', '\n').replace('<p class="con_tx">', '').replace('</p>', '').replace('\xa0','').replace('\n', '').replace('&lt;','').replace('&gt;','').replace('\r','')
    
 def get_date(num):
     movie_url  = url+'movie/bi/mi/basic.naver?code='+num

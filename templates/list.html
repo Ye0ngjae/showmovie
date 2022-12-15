@@ -22,18 +22,21 @@
             </nav>
         </div>
     </header>
-    <ul>
+    <div class="box1">
         {% if status == 1 %}
-            {% for value in range(10) %}
-            <li>
-                <a href="/movie/{{ i }}"><img src="../static/img/movie/{{ i }}.jpg" alt="영화 포스터"></a>
-                <p class="title">{{ title }}</p>
-                <p class="date">{{ date }}</p>
-            </li>
+            {% for row in rows %}
+            
+            <a href="/movie/{{ row[1] }}"><tr>
+                <img class="movieimg" src="../static/img/movie/{{ row[1] }}.jpg" alt="영화 포스터">
+                <td>{{ row[2] }}</td>
+                </br>
+                <td>{{ row[3] }}</td>
+            </tr></a>
             {% endfor %}
         {% else %}
             <h1 class="name">영화가 없습니다.</h1>
         {% endif %}
+    </div>
 </body>
 <!-- made by @Ye0ngjae -->
 </html>

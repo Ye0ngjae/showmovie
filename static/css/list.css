@@ -5,3 +5,17 @@
     margin-left: 40%;   
     padding: 3%;
 }
+
+.movieimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 250px;
+}
+
+.box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
